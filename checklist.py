@@ -34,6 +34,18 @@ def test():
 
     mark_completed(0)
 
+    select("C")
+    # View the results
+    list_all_items()
+    # Call function with new value
+    select("R")
+    # View results
+    list_all_items()
+    # Continue until all code is run
+
+    user_value = user_input("Please Enter a value:")
+    print(user_value)
+
 def list_all_items():
     index = 0
     for list_item in checklist:
@@ -44,8 +56,31 @@ def mark_completed(index):
     update(index, '{} {}'.format('√', read(index)))
     print(read(index))
 
+def user_input(prompt):
+    user_input = input(prompt)
+    return(user_input)
+
+def select(function_code):
+   # Create item
+    if function_code == "C":
+        input_item = user_input("Input item:")
+        create(input_item)
+
+    # Read item
+    elif function_code == "R":
+        item_index = int(user_input("Index Number?"))
+
+        # Remember that item_index must actually exist or our program will crash.
+        read(item_index)
+
+    # Print all items
+    elif function_code == "P":
+        list_all_items()
+
+    # Catch all
+    else:
+        print("Unknown Option")
+
+        
+        
 test()
-
-#def select(function_code):
-    
-
