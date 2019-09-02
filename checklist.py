@@ -1,10 +1,6 @@
 print("hello world!")
 
-# checklist = list()
-# checklist.append('Blue')
-# print(checklist)
-# checklist.append('Orange')
-# print(checklist)
+checklist = list()
 
 #create
 def create(item):
@@ -14,9 +10,6 @@ def create(item):
 def read(index):
     return checklist[index]
 
-# checklist = ['Blue', 'Orange']
-# checklist[1] = 'Cats'
-# print(checklist)
 
 #update
 def update(index, item):
