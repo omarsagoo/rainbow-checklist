@@ -1,5 +1,3 @@
-print("hello world!")
-
 checklist = list()
 
 #create
@@ -32,5 +30,11 @@ def test():
 
     print(read(0))
     print(read(1))
+
+def list_all_items():
+    index = 0
+    for list_item in checklist:
+        print(index + list_item)
+        index += 1 
 
 test()
