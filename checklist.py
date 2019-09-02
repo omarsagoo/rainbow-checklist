@@ -17,34 +17,6 @@ def update(index, item):
 def destroy(index):
     checklist.pop(index)
 
-#testing
-def test():
-    create("purple sox")
-    create("red cloak")
-
-    print(read(0))
-    print(read(1))
-
-    update(0, "purple socks")
-    destroy(1)
-
-    print(read(0))
-
-    list_all_items()
-
-    mark_completed(0)
-
-    select("C")
-    # View the results
-    list_all_items()
-    # Call function with new value
-    select("R")
-    # View results
-    list_all_items()
-    # Continue until all code is run
-
-    user_value = user_input("Please Enter a value:")
-    print(user_value)
 
 def list_all_items():
     index = 0
@@ -83,6 +55,40 @@ def select(function_code):
     # Catch all
     else:
         print("Unknown Option")
+
+    return True
+
+#testing
+def test():
+    # create("purple sox")
+    # create("red cloak")
+
+    # print(read(0))
+    # print(read(1))
+
+    # update(0, "purple socks")
+    # destroy(1)
+
+    # print(read(0))
+
+    # list_all_items()
+
+    # mark_completed(0)
+
+    # select("C")
+    # # View the results
+    # list_all_items()
+    # # Call function with new value
+    # select("R")
+    # View results
+    list_all_items()
+    # Continue until all code is run
+
+    # select(input())
+
+    # user_value = user_input("Please Enter a value:")
+    # print(user_value)
+
 
 
 running = True
