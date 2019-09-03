@@ -48,12 +48,18 @@ def select(function_code):
     # Print all items
     elif function_code == "P":
         list_all_items()
-
+    
+    # Update Item
     elif function_code == "U":
         item_index = int(user_input("Index number? "))
         input_item = user_input("What do you want to change it to? ")
         update(item_index, input_item)
-        print(read(item_index))
+
+    # Remove Item
+    elif function_code == "D":
+        item_index = int(user_input("Index number? "))
+        destroy(item_index)
+
 
     elif function_code == "Q":
         return False 
@@ -65,7 +71,7 @@ def select(function_code):
     return True
 
 #testing
-def test():
+#def test():
     # create("purple sox")
     # create("red cloak")
 
@@ -87,7 +93,7 @@ def test():
     # # Call function with new value
     # select("R")
     # View results
-    list_all_items()
+    #list_all_items()
     # Continue until all code is run
 
     # select(input())
@@ -100,9 +106,9 @@ def test():
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list, P to display list, U to update item, and Q to quit:   ")
+        "Press C to add to list, R to Read from list, P to display list, U to update item, D to remove item, and Q to quit:   ")
     running = select(selection)
 
         
         
-test()
+#test()
