@@ -111,6 +111,10 @@ def test():
     list_all_items()
 
     mark_completed(0)
+    print(read(0))
+    
+    mark_incomplete(0)
+    print(read(0))
 
     select("C")
     # View the results
