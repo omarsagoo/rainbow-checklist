@@ -29,7 +29,7 @@ def mark_completed(index):
     # print(read(index))
 
 def user_input(prompt):
-    user_input = input(prompt)
+    user_input = str.upper(input(prompt))
     return(user_input)
 
 def select(function_code):
