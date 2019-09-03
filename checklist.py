@@ -26,7 +26,7 @@ def list_all_items():
 
 def mark_completed(index):
     update(index, '{} {}'.format('√', read(index)))
-    print(read(index))
+    # print(read(index))
 
 def user_input(prompt):
     user_input = input(prompt)
@@ -63,6 +63,11 @@ def select(function_code):
 
     elif function_code == "Q":
         return False 
+
+    # Mark completed
+    elif function_code == "F":
+        item_index = int(user_input("Index Number? "))
+        mark_completed(item_index)
 
     # Catch all
     else:
@@ -106,7 +111,7 @@ def select(function_code):
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list, P to display list, U to update item, D to remove item, and Q to quit:   ")
+        "Press C to add to list, R to Read from list, P to display list, U to update item, D to remove item, F to mark as completed, and Q to quit:   ")
     running = select(selection)
 
         
