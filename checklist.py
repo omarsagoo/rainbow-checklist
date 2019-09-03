@@ -35,19 +35,25 @@ def user_input(prompt):
 def select(function_code):
    # Create item
     if function_code == "C":
-        input_item = user_input("Input item:")
+        input_item = user_input("Input item: ")
         create(input_item)
 
     # Read item
     elif function_code == "R":
-        item_index = int(user_input("Index Number?"))
+        item_index = int(user_input("Index Number? "))
 
         # Remember that item_index must actually exist or our program will crash.
-        read(item_index)
+        print(read(item_index))
 
     # Print all items
     elif function_code == "P":
         list_all_items()
+
+    elif function_code == "U":
+        item_index = int(user_input("Index number? "))
+        input_item = user_input("What do you want to change it to? ")
+        update(item_index, input_item)
+        print(read(item_index))
 
     elif function_code == "Q":
         return False 
@@ -94,7 +100,7 @@ def test():
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list, P to display list, and Q to quit")
+        "Press C to add to list, R to Read from list, P to display list, U to update item, and Q to quit:   ")
     running = select(selection)
 
         
