@@ -1,4 +1,6 @@
 from termcolor import colored
+from time import sleep
+from os import system
 
 checklist = list()
 
@@ -77,14 +79,16 @@ def select(function_code):
         item_index = int(user_input(ui))
         mark_completed(item_index)
 
+    elif function_code == "CLS":
+        system('clear')
+
     elif function_code == "Q":
         return False 
-
-   
 
     # Catch all
     else:
         print("Unknown Option")
+
 
     return True
 
@@ -124,9 +128,9 @@ def select(function_code):
 running = True
 while running:
     selection = user_input(
-        "Press C to add to list, R to Read from list, P to display list, U to update item, D to remove item, F to mark as completed, W to unmark, and Q to quit:   ")
+        "Press C to add to list, R to Read from list, P to display list, U to update item, D to remove item, F to mark as completed, W to unmark, CLS to clear, and Q to quit:   ")
     running = select(selection)
-
+    
         
         
 #test()
