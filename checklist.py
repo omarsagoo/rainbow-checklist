@@ -1,3 +1,5 @@
+from termcolor import colored
+
 checklist = list()
 
 #create
@@ -36,14 +38,16 @@ def user_input(prompt):
     return(user_input)
 
 def select(function_code):
+    ui =  colored("Index number? ", 'red', attrs=['bold', 'underline', 'blink'])
+
    # Create item
     if function_code == "C":
-        input_item = user_input("Input item: ")
+        input_item = user_input(colored("Input item: ", 'red', attrs=['bold', 'underline', 'blink']))
         create(input_item)
 
     # Read item
     elif function_code == "R":
-        item_index = int(user_input("Index Number? "))
+        item_index = int(user_input(ui))
 
         # Remember that item_index must actually exist or our program will crash.
         print(read(item_index))
@@ -54,23 +58,23 @@ def select(function_code):
     
     # Update Item
     elif function_code == "U":
-        item_index = int(user_input("Index number? "))
+        item_index = int(user_input(ui))
         input_item = user_input("What do you want to change it to? ")
         update(item_index, input_item)
 
     # Remove Item
     elif function_code == "D":
-        item_index = int(user_input("Index number? "))
+        item_index = int(user_input(ui))
         destroy(item_index)
     
     #uncheck item
     elif function_code == "W":
-        item_index = int(user_input("index Number? "))
+        item_index = int(user_input(ui))
         mark_incomplete(item_index)
 
     # Mark completed
     elif function_code == "F":
-        item_index = int(user_input("Index Number? "))
+        item_index = int(user_input(ui))
         mark_completed(item_index)
 
     elif function_code == "Q":
