@@ -139,4 +139,4 @@ while running:
     
         
         
-#test()
+test()
