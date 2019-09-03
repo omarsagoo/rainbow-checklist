@@ -1,0 +1,1 @@
+Hello! welcom to my checklist! just run python3 checklist.py in the terminal and follow the inputs. You can create, read, destroy, and update any information stored in the list, as well as mark them as completed, unmark them, and list out the entire list.
